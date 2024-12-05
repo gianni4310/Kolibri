@@ -1,0 +1,38 @@
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img img.activate {
+    animation: ball_activation calc(var(--activation-ms) * 1ms) linear forwards;
+}
+
+.img img.passivate {
+ 
+    animation: ball_passivation calc(var(--passivation-ms) * 1ms) linear forwards;
+}
+
+
+@keyframes ball_activation {
+    0% {
+        opacity: 1;
+        transform: translateX(500%) scale(1) rotate3d(1, 1, 0, 0deg); /* Achsen hinzugefügt */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%) scale(1) rotate3d(1, 1, 0, 90deg);
+    }
+}
+
+@keyframes ball_passivation {
+    0% {
+        opacity: 1;
+        transform: translateX(0%) scale(1) rotateZ(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-500%) scale(1) rotateZ(-360deg);
+    }
+}
